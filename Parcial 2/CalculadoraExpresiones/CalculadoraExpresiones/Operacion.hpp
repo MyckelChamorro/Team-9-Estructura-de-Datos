@@ -1,3 +1,4 @@
+#pragma once
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -11,105 +12,109 @@
 */
 
 #pragma once
+#include <iostream>
 #include "CustomString.hpp"
 #include "Stack.hpp"
 #include <conio.h>
 #include <string>
 
+using namespace std;
+
 class Operation
 {
 public:
 
-	/**
-	 * @brief infix a prefix
-	 * 
-	 * @return Stack<string> 
-	 */
-	Stack<string> infix_to_prefix1(Stack<string>);
-	
-	/**
-	 * @brief comprobar operador
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_operator(char);
-	
-	/**
-	 * @brief comprobar operador
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_operator1(string);
-	
-	/**
-	 * @brief comprobar char trigonometrica
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_trig_fun(char);
-	
-	/**
-	 * @brief comprobar trigonometrica
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_trig_fun1(string);
-	
-	/**
-	 * @brief comprobar operando
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_operand(char);
-	
-	/**
-	 * @brief char precedente
-	 * 
-	 * @return int 
-	 */
-	int precedence(char);
-	
-	/**
-	 * @brief elemento precedente
-	 * 
-	 * @return int 
-	 */
-	int precedence1(string);
-	
-	/**
-	 * @brief calcular
-	 * 
-	 * @return double 
-	 */
-	double calculate(Stack<string>);
-	
-	/**
-	 * @brief ingresar datos
-	 * 
-	 * @return Stack<string> 
-	 */
-	Stack<string> ingresar_datos();
-	Stack<string> ingresar_datos_enteros();
-	/**
-	 * @brief invertir pila
-	 * 
-	 * @return Stack<string> 
-	 */
-	Stack<string> invertir_pila(Stack<string>);
+    /**
+     * @brief infix a prefix
+     *
+     * @return Stack<string>
+     */
+    Stack<string> infix_to_prefix1(Stack<string>);
 
-	/**
-	 * @brief copiar pila
-	 * 
-	 * @return Stack<string> 
-	 */
-	Stack<string> copiar_pila(Stack<string>);
-	bool evaluar_expresion(Stack<string>);
-	char* ingreso(const char*);
+    /**
+     * @brief comprobar operador
+     *
+     * @return true
+     * @return false
+     */
+    bool is_operator(char);
+
+    /**
+     * @brief comprobar operador
+     *
+     * @return true
+     * @return false
+     */
+    bool is_operator1(string);
+
+    /**
+     * @brief comprobar char trigonometrica
+     *
+     * @return true
+     * @return false
+     */
+    bool is_trig_fun(char);
+
+    /**
+     * @brief comprobar trigonometrica
+     *
+     * @return true
+     * @return false
+     */
+    bool is_trig_fun1(string);
+
+    /**
+     * @brief comprobar operando
+     *
+     * @return true
+     * @return false
+     */
+    bool is_operand(char);
+
+    /**
+     * @brief char precedente
+     *
+     * @return int
+     */
+    int precedence(char);
+
+    /**
+     * @brief elemento precedente
+     *
+     * @return int
+     */
+    int precedence1(string);
+
+    /**
+     * @brief calcular
+     *
+     * @return double
+     */
+    double calculate(Stack<string>);
+
+    /**
+     * @brief ingresar datos
+     *
+     * @return Stack<string>
+     */
+    Stack<string> ingresar_datos();
+
+    /**
+     * @brief invertir pila
+     *
+     * @return Stack<string>
+     */
+    Stack<string> invertir_pila(Stack<string>);
+
+    /**
+     * @brief copiar pila
+     *
+     * @return Stack<string>
+     */
+    Stack<string> copiar_pila(Stack<string>);
+    bool evaluar_expresion(Stack<string>);
+    char* ingreso(const char*);
+
 };
 
 Stack<string> Operation::infix_to_prefix1(Stack<string> infix)
@@ -394,34 +399,6 @@ Stack<string> Operation::ingresar_datos()
         return datos;
     }
     return invertir_pila(datos);
-}
-
-Stack<string> Operation::ingresar_datos_enteros()
-{
-    string dato = "99";
-    Stack<string> datos;
-    mystring str;
-    int num = 0;
-    char datos2[11];
-    while (dato != "999") {
-
-
-
-        strcpy_s(datos2, ingreso("Ingrese un numero a la pila "));
-        //cout << datos2 << endl;
-        dato = datos2;
-
-        cout << endl;
-        //cin >> dato;
-        if (dato != "999" && stoi(dato) > 9) {
-            datos.insertar_por_la_cabeza(dato);
-
-        }
-
-
-    }
-    return datos;
-
 }
 
 Stack<string> Operation::invertir_pila(Stack<string> datos)

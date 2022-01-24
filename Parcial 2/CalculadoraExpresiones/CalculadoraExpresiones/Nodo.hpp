@@ -1,3 +1,4 @@
+#pragma once
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -24,38 +25,38 @@ public:
 
 	/**
 	 * @brief Construct a new Nodo< T> object
-	 * 
+	 *
 	 */
 	Nodo<T>(T, Nodo*);
 
 	/**
 	 * @brief Get the dato object
-	 * 
-	 * @return T 
+	 *
+	 * @return T
 	 */
 	T get_dato();
 
 	/**
 	 * @brief Set the dato object
-	 * 
+	 *
 	 */
 	void set_dato(T);
 
 	/**
 	 * @brief Get the siguiente object
-	 * 
-	 * @return Nodo<T>* 
+	 *
+	 * @return Nodo<T>*
 	 */
 	Nodo<T>* get_siguiente();
 
 	/**
 	 * @brief Set the siguiente object
-	 * 
+	 *
 	 */
 	void set_siguiente(Nodo*);
-	
-	
-	
+
+
+
 };
 template<class T>
 Nodo<T>::Nodo(T val, Nodo* sig)
@@ -75,7 +76,7 @@ T Nodo<T>::get_dato()
 	{
 		std::cout << "Error" << std::endl;
 	}
-	
+
 }
 
 template<class T>

@@ -1,3 +1,4 @@
+#pragma once
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -26,117 +27,117 @@ private:
 public:
 	/**
 	 * @brief comprobar pila vacia
-	 * 
-	 * @return true 
-	 * @return false 
+	 *
+	 * @return true
+	 * @return false
 	 */
 	bool StackVacia();
 
 	/**
 	 * @brief Comprobar pila vacia
-	 * 
-	 * @return true 
-	 * @return false 
+	 *
+	 * @return true
+	 * @return false
 	 */
 	bool empty_stack();
-	
+
 	/**
 	 * @brief Construct a new Stack< T> object
-	 * 
+	 *
 	 */
 	Stack<T>();
-	
+
 	/**
 	 * @brief insertar por cola
-	 * 
+	 *
 	 */
 	void insertar_por_la_cola(T);
-	
+
 	/**
 	 * @brief Set the primero object
-	 * 
+	 *
 	 */
 	void set_primero(Nodo<T>*);
-	
+
 	/**
 	 * @brief Get the primero object
-	 * 
-	 * @return Nodo<T>* 
+	 *
+	 * @return Nodo<T>*
 	 */
 	Nodo<T>* get_primero();
-	
+
 	/**
 	 * @brief Set the actual object
-	 * 
+	 *
 	 */
 	void set_actual(Nodo<T>*);
-	
+
 	/**
 	 * @brief Get the actual object
-	 * 
-	 * @return Nodo<T>* 
+	 *
+	 * @return Nodo<T>*
 	 */
 	Nodo<T>* get_actual();
-	
+
 	/**
 	 * @brief Insertar por cabezas
-	 * 
+	 *
 	 */
 	void insertar_por_la_cabeza(T);
-	
+
 	/**
 	 * @brief Borrar por cola
-	 * 
+	 *
 	 */
 	void borrar_por_la_cola();
-	
+
 	/**
 	 * @brief Borrar por cabeza
-	 * 
+	 *
 	 */
 	void borrar_por_la_cabeza();
-	
+
 	/**
 	 * @brief Mostrar
-	 * 
+	 *
 	 */
 	void mostrar();
-	
+
 	/**
 	 * @brief Ver Expresion
-	 * 
+	 *
 	 */
 	void mostrar_expresion();
-	
+
 	/**
 	 * @brief Mostrar Expresion Invetida
-	 * 
+	 *
 	 */
 	void mostrar_expresion_invertida();
-	
+
 	/**
 	 * @brief Llenar lista aleatorio
-	 * 
+	 *
 	 */
 	void llenar_aleatorio_lista();
-	
+
 	/**
 	 * @brief Vaciar Lista
-	 * 
+	 *
 	 */
 	void vaciar_lista();
-	
+
 	/**
 	 * @brief MCD
-	 * 
-	 * @return T 
+	 *
+	 * @return T
 	 */
 	T maximo_comun_divisor(T);
-	
+
 	/**
 	 * @brief Contar elementos
-	 * 
-	 * @return T 
+	 *
+	 * @return T
 	 */
 	T contar_elementos();
 
@@ -162,7 +163,6 @@ void Stack<T>::mostrar_expresion()
 		temporal = temporal->get_siguiente();
 
 	}
-	cout << endl;
 }
 template<class T>
 void Stack<T>::mostrar_expresion_invertida()

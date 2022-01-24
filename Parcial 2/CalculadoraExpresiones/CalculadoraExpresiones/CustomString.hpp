@@ -1,3 +1,4 @@
+#pragma once
 /** UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
 *			INGENIERIA SOFTWARE
 *
@@ -17,29 +18,29 @@ class mystring
 {
 public:
 
-	/**
-	 * @brief extraer en cadena
-	 * 
-	 * @return string 
-	 */
-	string substract(string, int, int);
+    /**
+     * @brief extraer en cadena
+     *
+     * @return string
+     */
+    string substract(string, int, int);
 
-	/**
-	 * @brief comparar strings
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_equal(string, string);
+    /**
+     * @brief comparar strings
+     *
+     * @return true
+     * @return false
+     */
+    bool is_equal(string, string);
 
-	/**
-	 * @brief comprobar si es numero
-	 * 
-	 * @return true 
-	 * @return false 
-	 */
-	bool is_number(string);
-	
+    /**
+     * @brief comprobar si es numero
+     *
+     * @return true
+     * @return false
+     */
+    bool is_number(string);
+
 };
 
 string mystring::substract(string cad, int position_initial, int number_character)
