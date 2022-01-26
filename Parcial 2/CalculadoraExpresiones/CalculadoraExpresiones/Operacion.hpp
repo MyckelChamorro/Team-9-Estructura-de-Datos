@@ -115,6 +115,8 @@ public:
     bool evaluar_expresion(Stack<string>);
     char* ingreso(const char*);
 
+    void compare(Stack<string>, Stack<string>);
+
 };
 
 Stack<string> Operation::infix_to_prefix1(Stack<string> infix)
@@ -617,4 +619,96 @@ bool Operation::is_operand(char c)
         return true;
     }
     return false;
+}
+
+void Operation::compare(Stack <string> prefija, Stack<string> datos)
+{
+        Stack<string> datos2;
+        datos2 = ingresar_datos();
+        if (evaluar_expresion(datos2)) {
+
+            Stack<string> prefija2;
+            prefija2 = infix_to_prefix1(datos2);
+            char signo = 3;
+            cout << "¿Signo? (<, >, =): ";
+            cin >> signo;
+            if (signo == '>')
+            {
+                if (calculate(prefija) > calculate(prefija2))
+                {
+                    cout << "Expresion verdadera -> ";
+                    datos.mostrar_expresion();
+                    cout << " si es mayor que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+                else
+                {
+                    cout << "Expresion falsa -> ";
+                    datos.mostrar_expresion();
+                    cout << " no es mayor que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+            }
+            else if (signo == '<')
+            {
+                if (calculate(prefija) < calculate(prefija2))
+                {
+                    cout << "Expresion verdadera -> ";
+                    datos.mostrar_expresion();
+                    cout << " si es menor que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+                else
+                {
+                    cout << "Expresion falsa -> ";
+                    datos.mostrar_expresion();
+                    cout << " no es menor que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+            }
+            else if (signo == '=')
+            {
+                if (calculate(prefija) == calculate(prefija2))
+                {
+                    cout << "Expresion verdadera -> ";
+                    datos.mostrar_expresion();
+                    cout << " si es igual que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+                else
+                {
+                    cout << "Expresion falsa -> ";
+                    datos.mostrar_expresion();
+                    cout << " no es igual que ";
+                    datos2.mostrar_expresion();
+                    cout << endl;
+                    cout << endl;
+
+                }
+            }
+            else
+            {
+                cout << "ERROR, no ingreso un signo correcto" << endl;
+            }
+
+        }
+        else
+        {
+            cout << "Error Tipo2" << endl;
+        }
 }

@@ -39,95 +39,8 @@ int main()
 
             if (comp == 'y')
             {
-                Stack<string> datos2;
-                datos2 = op.ingresar_datos();
-                if (op.evaluar_expresion(datos2)) {
+                op.compare(prefija, datos);
 
-                    Stack<string> prefija2;
-                    prefija2 = op.infix_to_prefix1(datos2);
-                    char signo = 3;
-                    cout << "¿Signo? (<, >, =): ";
-                    cin >> signo;
-                    if (signo == '>')
-                    {
-                        if (op.calculate(prefija) > op.calculate(prefija2)) 
-                        { 
-                            cout << "Expresion verdadera -> ";
-                            datos.mostrar_expresion();
-                            cout << " si es mayor que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                        else 
-                        {
-                            cout << "Expresion falsa -> ";
-                            datos.mostrar_expresion();
-                            cout << " no es mayor que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                    }
-                    else if (signo == '<')
-                    {
-                        if (op.calculate(prefija) < op.calculate(prefija2)) 
-                        {
-                            cout << "Expresion verdadera -> ";
-                            datos.mostrar_expresion();
-                            cout << " si es menor que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                        else
-                        {
-                            cout << "Expresion falsa -> ";
-                            datos.mostrar_expresion();
-                            cout << " no es menor que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                    }
-                    else if (signo == '=')
-                    {
-                        if (op.calculate(prefija) == op.calculate(prefija2)) 
-                        {
-                            cout << "Expresion verdadera -> ";
-                            datos.mostrar_expresion();
-                            cout << " si es igual que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                        else
-                        {
-                            cout << "Expresion falsa -> ";
-                            datos.mostrar_expresion();
-                            cout << " no es igual que ";
-                            datos2.mostrar_expresion();
-                            cout << endl;
-                            cout << endl;
-                            
-                        }
-                    }
-                    else
-                    {
-                        cout << "ERROR, no ingreso un signo correcto" << endl;
-                    }
-
-                }
-                else
-                {
-                    cout << "Error Tipo2" << endl;
-                }
-                
             }
             else if (comp == 'n')
             {
@@ -139,7 +52,8 @@ int main()
                 system("exit");
             }
         }
-        else {
+        else
+        {
             cout << "EXPRESION INVALIDA" << endl;
         }
 
